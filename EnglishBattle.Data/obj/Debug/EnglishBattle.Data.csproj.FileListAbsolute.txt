@@ -1,0 +1,13 @@
+C:\Users\rbary\dev\falikou\englishBattleProjeCT\EnglishBattle.Data\bin\Debug\EnglishBattle.Data.dll.config
+C:\Users\rbary\dev\falikou\englishBattleProjeCT\EnglishBattle.Data\bin\Debug\EnglishBattle.Data.dll
+C:\Users\rbary\dev\falikou\englishBattleProjeCT\EnglishBattle.Data\bin\Debug\EnglishBattle.Data.pdb
+C:\Users\rbary\dev\falikou\englishBattleProjeCT\EnglishBattle.Data\bin\Debug\EntityFramework.dll
+C:\Users\rbary\dev\falikou\englishBattleProjeCT\EnglishBattle.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rbary\dev\falikou\englishBattleProjeCT\EnglishBattle.Data\bin\Debug\EntityFramework.xml
+C:\Users\rbary\dev\falikou\englishBattleProjeCT\EnglishBattle.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rbary\dev\falikou\englishBattleProjeCT\EnglishBattle.Data\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\rbary\dev\falikou\englishBattleProjeCT\EnglishBattle.Data\obj\Debug\EnglishBattle.Data.csprojAssemblyReference.cache
+C:\Users\rbary\dev\falikou\englishBattleProjeCT\EnglishBattle.Data\obj\Debug\EnglishBattle.Data.csproj.CoreCompileInputs.cache
+C:\Users\rbary\dev\falikou\englishBattleProjeCT\EnglishBattle.Data\obj\Debug\EnglishBattle.Data.csproj.CopyComplete
+C:\Users\rbary\dev\falikou\englishBattleProjeCT\EnglishBattle.Data\obj\Debug\EnglishBattle.Data.dll
+C:\Users\rbary\dev\falikou\englishBattleProjeCT\EnglishBattle.Data\obj\Debug\EnglishBattle.Data.pdb
