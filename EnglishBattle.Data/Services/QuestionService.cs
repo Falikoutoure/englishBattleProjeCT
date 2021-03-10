@@ -6,41 +6,41 @@ using System.Threading.Tasks;
 
 namespace EnglishBattle.Data.Services
 {
-    public class VilleService
+    public class QuestionService
     {
         private EnglishBattleEntities context;
+
 
         /// <summary>
         /// Constructeur
         /// </summary>
         /// <param name="context"></param>
-        public VilleService(EnglishBattleEntities context)
+        public QuestionService(EnglishBattleEntities context)
         {
             this.context = context;
         }
 
         ///  <summary>
-        ///  Retourne une ville en donnant l'id
+        ///  Crée une nouvelle question
         ///  </summary>
-        ///  <param  id="id">id</param>
-        ///  <returns>ville</returns>
-        public Ville GetVille(int id)
+        public void CreateNewQuestion(Question question)
         {
             using (context)
             {
-                return context.Villes.Find(id);
+                context.Questions.Add(question);
+                context.SaveChanges();
             }
         }
 
         ///  <summary>
-        ///  Retourne  une  liste  de villes
+        ///  Retourne  la liste de toutes les questions
         ///  </summary>
-        ///  <returns>Liste de villes</returns>
-        public List<Ville> GetList()
+        ///  <returns>Liste des question</returns>
+        public List<Question> GetList()
         {
             using (context)
             {
-                return context.Villes.ToList();
+                return context.Questions.ToList();
             }
         }
     }

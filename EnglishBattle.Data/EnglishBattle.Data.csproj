@@ -76,6 +76,9 @@
       <DependentUpon>EnglishBattleModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Services\JoueurService.cs" />
+    <Compile Include="Services\PartieService.cs" />
+    <Compile Include="Services\QuestionService.cs" />
+    <Compile Include="Services\VerbeService.cs" />
     <Compile Include="Services\VilleService.cs" />
     <Compile Include="Verbe.cs">
       <DependentUpon>EnglishBattleModel.tt</DependentUpon>

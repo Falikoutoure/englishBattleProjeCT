@@ -10,24 +10,55 @@ namespace EnglishBattle.Controllers
 {
     public class AccountController : Controller
     {
-        // GET: Subscription
-        public ActionResult Subscription()
+        public ActionResult Logout()
         {
+            Session["joueur"] = null;
+            return RedirectToAction("Index", "Account");
+        }
+
+        // GET: Index
+        public ActionResult Index()
+        {
+            ViewBag.title = "Connexion";
             return View();
         }
 
-        /*[HttpGet]
-        public ActionResult GetVilles(string id)
+        // POST : Index
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index(Models.LoginViewModel model)
         {
-            if (!string.IsNullOrWhiteSpace(iso3) && iso3.Length == 3)
+            if (ModelState.IsValid)
             {
-                var repo = new RegionsRepository();
+                JoueurService joueurService = new JoueurService(new EnglishBattleEntities());
 
-                IEnumerable<SelectListItem> regions = repo.GetRegions(iso3);
-                return Json(regions, JsonRequestBehavior.AllowGet);
+                Joueur joueur = joueurService.GetJoueur(model.Email, model.Password);
+
+                if (joueur != null)
+                {
+                    Session["joueur"] = joueur;
+
+                    return RedirectToAction("Index", "Partie");
+                }
+                else
+                {
+                    // Nettoie le model pour toutes les propriétés soient vide
+                    ModelState.Clear();
+
+                    ViewBag.Errors = "Email ou mot de passe incorrect";
+                }
             }
-            return null;
-        }*/
+
+            return View();
+        }
+
+        // GET: Subscription
+        public ActionResult Subscription()
+        {
+            ViewBag.title = "Inscription";
+            return View();
+        }
 
         // POST: Subscription
         [HttpPost]
@@ -58,6 +89,16 @@ namespace EnglishBattle.Controllers
 
             // Si on arrive ici c'est que les données du formulaire n'est pas validé
             return View();
+        }
+
+        [HttpGet]
+        public ActionResult GetVilles()
+        {
+            VilleService villeService = new VilleService(new EnglishBattleEntities());
+
+            IEnumerable<SelectListItem> villes = (IEnumerable<SelectListItem>)villeService.GetList();
+            return Json(villes, JsonRequestBehavior.AllowGet);
+            
         }
     }
 }

@@ -1,0 +1,27 @@
+﻿@using EnglishBattle.Data
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var joueur = (Joueur)Context.Session["joueur"];
+
+    if (joueur != null)
+    {
+        <h2>Nouvelle partie</h2>
+        <span>Bienvenue @joueur.prenom @joueur.nom</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <div class="btn btn-link">@Html.ActionLink("Se deconnecter", "Logout", "Account")</div>
+    }
+    else
+    {
+        <div class="btn btn-link">@Html.ActionLink("Se connecter", "Index", "Account")</div>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <div class="btn btn-link">@Html.ActionLink("S'inscrire", "Subscription", "Account")</div>
+    }
+
+}
